@@ -4,7 +4,11 @@
     <router-view/> -->
     <vue-canvas-nest :config="{color:'255,0,0', count: 88}"></vue-canvas-nest>
 
-    <auth class="auth"/>
+    <!-- <auth class="auth"/> -->
+    
+    <router-view />
+
+
 
   </div>
 </template>

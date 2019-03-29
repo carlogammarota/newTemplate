@@ -29,6 +29,9 @@ Vue.config.productionTip = false
 Vue.use(VModal)
 library.add(faCoffee)
 Vue.use(store);
+
+Vue.use(router);
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 /* eslint-disable no-new */

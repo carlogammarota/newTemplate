@@ -91,7 +91,7 @@
                 <p class="text-red text-xs italic">Please choose a password.</p>
                 </div>
                 <div class="flex items-center justify-between">
-                <button @click="submit()"  class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button @click="login()"  class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                     Sign In
                 </button>
                 <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="#">
@@ -118,12 +118,14 @@
     </div>
     
 </template>
+
 <script>
+    import firebase from "firebase";
+    //import router from '..//router'
+    //import router from '..//router'
+
 	export default {
-		name: "auth-form",
-		props:{
-			action: ""
-		},
+		name: "login",
 		data(){
 			return {
 				valid: false,
@@ -140,9 +142,38 @@
 			}
 		},
 		methods:{
+            // signUp(){
+            //     firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+            //         function (user){
+
+            //         },
+            //         function (err){
+            //             console.log("oops", err.message)
+            //         }
+            //     );
+            // },
 			submit(){
                 console.log(this.email, this.password)
-				this.$emit("process", {email:this.email, password:this.password});
+                //this.$emit("process", {email:this.email, password:this.password});
+                this.$router.push('dashboard')
+
+            },
+
+            login(){
+                var self = this;
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+                    function(user){
+                        console.log("you are Login");
+                        console.log(self.$router);
+
+                        //si sale todo bien el login lo redirigimos a dashboard
+                        //this.Router.replace("dashboard")
+                        self.$router.push('dashboard')
+                    },
+                    function(err) {
+                        console.log("error ", err.message)
+                    }
+                );
             },
             newUser(){
             this.show();
