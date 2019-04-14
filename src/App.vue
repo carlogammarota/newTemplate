@@ -5,7 +5,7 @@
     <vue-canvas-nest :config="{color:'255,0,0', count: 88}"></vue-canvas-nest>
 
     <!-- <auth class="auth"/> -->
-    
+
     <router-view />
 
 
@@ -31,7 +31,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .auth{
   margin: auto;
