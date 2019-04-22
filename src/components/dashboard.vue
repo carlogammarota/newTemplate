@@ -1,5 +1,15 @@
 <template>
   <div>
+    <router-link to="/dashboard/dash">
+     Go to "/dashboard/dash"
+   </router-link>
+    <router-link to="/dashboard/contact">
+     Go to "/dashboard/contact"
+   </router-link>
+ </br>
+   <router-link to="/dashboard/children">
+    Go to "/dashboard/children"
+  </router-link>
       <!-- <header>
        HEADER
       </header>
@@ -142,12 +152,9 @@
               </div>
               <div id="info" class="border-b border-grey-light h-24">
                 <div class="container mx-auto">
-                  <div class="flex flex-wrap">
-                    <div class="w-full sm:w-1/1 md:w-1/2 lg:w-1/2 xl:w-1/4 mb-4 bg-grey">1</div>
-                    <div class="w-full sm:w-1/1 md:w-1/2 lg:w-1/2 xl:w-1/4 mb-4 bg-grey-light">2</div>
-                    <div class="w-full sm:w-1/1 md:w-1/2 lg:w-1/2 xl:w-1/4 mb-4 bg-grey">3</div>
-                    <div class="w-full sm:w-1/1 md:w-1/2 lg:w-1/2 xl:w-1/4 mb-4 bg-grey-light">4</div>
-                  </div>
+                
+                  <h2>Router</h2>
+                  <router-view />
                 </div>
               </div>
           </div>
