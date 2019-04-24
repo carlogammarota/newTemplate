@@ -63,10 +63,10 @@
               </div>
               <ul id="menu" class="flex flex-col list-reset sm:hidden md:block">
                   <li class="block">
-                      <a href="#" class="no-underline text-white block h-full w-full border-b border-orange-darkest px-8 py-4 hover:text-orange">
-                          <i class="fa fa-tachometer mr-2" aria-hidden="true"></i>
-                          Dashboard
-                      </a>
+                    <router-link to="/dashboard/dash" class="no-underline text-white block h-full w-full border-b border-orange-darkest px-8 py-4 hover:text-orange">
+                      <i class="fa fa-tachometer mr-2" aria-hidden="true"></i>
+                      Dashboard
+                   </router-link>
                   </li>
                   <li class="flex justify-between block">
                       <a href="#" class="no-underline text-white block h-full w-full border-b border-orange-darkest px-8 py-4 hover:text-orange">
@@ -111,6 +111,12 @@
                           </ul>
                       </ul>
                   </li>
+                  <li class="block">
+                    <router-link to="/dashboard/contact" class="no-underline text-white block h-full w-full border-b border-orange-darkest px-8 py-4 hover:text-orange">
+                      <i class="fa fa-address-book" aria-hidden="true"></i>
+                      Contact
+                   </router-link>
+                  </li>
               </ul>
           </div>
           <div id="content" class="px-8 bg-transparent flex-grow flex-shrink flex-auto overflow-y-scroll">
@@ -152,7 +158,7 @@
               </div>
               <div id="info" class="border-b border-grey-light h-24">
                 <div class="container mx-auto">
-                
+
                   <h2>Router</h2>
                   <router-view />
                 </div>
