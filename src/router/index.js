@@ -7,15 +7,18 @@ import contact from '..//components/contact'
 import dash from '..//components/dash'
 import firebase from "firebase"
 
+//import { mapActions, mapGetters } from "vuex";
+import store from "@/store"
+
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
   routes: [
-      {
-        path: "*",
-        redirect: "/login"
-      },
+      //{
+      //  path: "*",
+      //  redirect: "/login"
+    //  },
       {
         path: "/",
         redirect: "/login"
@@ -45,15 +48,19 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
 
-  const currentUser = firebase.auth().currentUser;
-  console.log("currentUser", currentUser);
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const currentUser = store.getters.getUser; 
+  //firebase.auth().currentUser;
+  //CURRENT USER DEBE VENIR DESDE EL STORE
 
+
+  console.log("currentUser 1", currentUser);
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+console.log("currentUser", requiresAuth);
   if(requiresAuth && !currentUser)
   {
      next("login")
   }
-  else if (!requiresAuth && currentUser) next("dashboard");
+//  else if (!requiresAuth && currentUser) next("dashboard");
   else next();
 });
 

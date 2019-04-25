@@ -3,6 +3,7 @@
     <router-link to="/dashboard/dash">
      Go to "/dashboard/dash"
    </router-link>
+ </br>
     <router-link to="/dashboard/contact">
      Go to "/dashboard/contact"
    </router-link>
@@ -147,7 +148,7 @@
                                   </span>
                               </li>
                               <li class="border-l px-4">
-                                  <span class="text-sm">
+                                  <span class="text-sm" @click="logout()" style="cursor:pointer">
                                       Log Out
                                       <i class="fa fa-sign-out" aria-hidden="true"></i>
                                   </span>
@@ -171,11 +172,20 @@
 </template>
 
 <script>
+import store from "@/store"
 export default {
   name: 'Dashboard',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    logout(){
+      console.log("logout")
+      this.$destroy();
+      //this.$session.destroy();
+      this.$router.push('/login');
     }
   }
 }
