@@ -60,7 +60,7 @@
                     <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" id="grid-zip" type="text" placeholder="90210">
                 </div>
             </div>
-            
+
             <div class="flex flex-wrap -mx-3 mb-2">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0" style="text-align:center;margin:auto;">
                     <button style="margin-top:20px" class="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
@@ -75,7 +75,7 @@
         <!-- Login  -->
         <div class="w-full max-w-xs auth">
         <!-- logo \ login -->
-            <font-awesome-icon style="font-size:180px"  icon="coffee" />      
+            <font-awesome-icon style="font-size:180px"  icon="coffee" />
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
@@ -102,27 +102,28 @@
                 </br>
 
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
-                    You do not have an account? 
+                    You do not have an account?
                 </label>
-                    
+
                 </br>
                 <button style="text-align:center" @click="newUser()" class="bg-green hover:bg-green-light text-white font-bold py-2 px-4 border-b-4 border-green-dark hover:border-green rounded">
                     Sing Up
                 </button>
-                
+
             </form>
             <p class="text-center text-grey text-xs">
                 ©2019 Acme Corp. All rights reserved.
             </p>
         </div>
     </div>
-    
+
 </template>
 
 <script>
     import firebase from "firebase";
     //import router from '..//router'
     //import router from '..//router'
+    import { mapActions, mapGetters } from "vuex";
 
 	export default {
 		name: "login",
@@ -141,7 +142,11 @@
 				]
 			}
 		},
-		methods:{
+    computed:{
+      ...mapGetters(['getUser'])
+    },
+		methods: {
+            ...mapActions(["updateStore"]),
             // signUp(){
             //     firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
             //         function (user){
@@ -152,17 +157,20 @@
             //         }
             //     );
             // },
-			submit(){
-                console.log(this.email, this.password)
-                //this.$emit("process", {email:this.email, password:this.password});
-                this.$router.push('dashboard')
+			      submit(){
+                 console.log(this.email, this.password)
+                 //this.$emit("process", {email:this.email, password:this.password});
+                 this.$router.push('dashboard')
 
-            },
-
+                },
             login(){
                 var self = this;
+                //this.updateStore("test test test");
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
                     function(user){
+                       //GUARDAR USER EN EL STATE EL USER!!!!
+                        self.updateStore(user);
+
                         console.log("you are Login");
                         console.log(self.$router);
 
