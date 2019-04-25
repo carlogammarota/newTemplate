@@ -162,6 +162,7 @@
                  //this.$emit("process", {email:this.email, password:this.password});
                  this.$router.push('dashboard')
 
+
                 },
             login(){
                 var self = this;
