@@ -16,6 +16,7 @@
         <apexchart type=radialBar width=380 :options="radialBar.plotOptions" :series="radialBar.series" />
       </div>
     </div>
+    <!-- <apexchart type=pie width=380 :options="chartOptions" :series="chartOptions.series" /> -->
     <!-- <h1>Ramdom Chart</h1> -->
     <!-- <ramdomChart></ramdomChart> -->
     <br/>    
