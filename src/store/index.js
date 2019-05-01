@@ -11,17 +11,16 @@ export default new Vuex.Store({
 		auth: {
 			user: null
 		}
-
 	},
 	mutations: {
-			UPDATE(state, payload) {
-				state.auth.user = payload;
+		UPDATE(state, payload) {
+			state.auth.user = payload;
 		}
 	},
 	actions: {
-			updateStore({ commit }, payload) {
-				console.log("Actions", payload)
-				commit('UPDATE', payload);
+		updateStore({ commit }, payload) {
+			console.log("Actions", payload)
+			commit('UPDATE', payload);
 		}
 	},
 	getters: {

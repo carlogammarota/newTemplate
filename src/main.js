@@ -34,6 +34,13 @@ Vue.use(router);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
+
+//Vue.component('apexchart', VueApexCharts)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
