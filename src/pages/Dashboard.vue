@@ -29,6 +29,12 @@
                 <i class="fa fa-fw fa-newspaper-o"></i>
                 <span>Contact</span>
             </router-link>
+            <a href="#" @click="logout()">
+                <i class="fa fa-fw fa-bar-chart-o"></i>
+                <span>Logout</span>
+            </a>
+
+            
         </component>
         <main id="page-wrap">
           <h2>test</h2>  
@@ -63,7 +69,7 @@
 </template>
 
 <script>
-    import slide from '@/components/Menu/slide';
+    import slide from '@/components/Menu/';
     import bubble from '@/components/Menu/bubble';
     // import elastic from '/components/Menu/elastic';
     import falldown from '@/components/Menu/fallDown';
@@ -114,6 +120,12 @@
         },
         changeSide(side) {
           this.side = side;
+        },
+        logout(){
+          console.log("logout")
+          this.$destroy();
+          //this.$session.destroy();
+          this.$router.push('/login');
         }
       }
     };
