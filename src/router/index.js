@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '..//forms/auth'
-import dashboard from '..//components/dashboard'
+import Dashboard from '..//pages/Dashboard'
 import children from '..//components/children'
 import contact from '..//components/contact'
 import dash from '..//components/dash'
@@ -29,9 +29,9 @@ const router = new Router({
         component: login
       },
       {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: dashboard,
+        path: '/Dashboard',
+        name: 'Dashboard',
+        component: Dashboard,
         meta: {
           requiresAuth: true
         },
