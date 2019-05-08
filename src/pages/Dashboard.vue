@@ -1,11 +1,14 @@
 
 <template>
     <div id="app">
+      
         <component :is="currentMenu" :right="side === 'right' ? true: false">
-            <a href="#">
+            
+              <router-link to="/dashboard/dash">
                 <i class="fa fa-fw fa-star-o"></i>
-                <span>Favourites</span>
-            </a>
+                <span>Dashboard</span>
+              </router-link>
+            
             <a href="#">
                 <i class="fa fa-fw fa-bell-o"></i>
                 <span>Alerts</span>
@@ -22,10 +25,10 @@
                 <i class="fa fa-fw fa-bar-chart-o"></i>
                 <span>Analytics</span>
             </a>
-            <a href="#">
+            <router-link to="/dashboard/contact">
                 <i class="fa fa-fw fa-newspaper-o"></i>
-                <span>Reading</span>
-            </a>
+                <span>Contact</span>
+            </router-link>
         </component>
         <main id="page-wrap">
           <h2>test</h2>  
@@ -138,7 +141,21 @@
     #app {
       height: 100%;
     }
-
+    router-link {
+        display: inline-block;
+        margin: 0.75em;
+        padding: 1.35em 1.1em;
+        width: 15em;
+        background: #fffce1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 800;
+        border-top-left-radius: 20px 50px;
+        border-top-right-radius: 20px 50px;
+        border-bottom-right-radius: 20px 50px;
+        border-bottom-left-radius: 20px 50px;
+        cursor: pointer;
+    }
     a {
       color: #4e4a46;
       text-decoration: none;
