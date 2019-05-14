@@ -1,6 +1,5 @@
 <template>
   <div class="small">
-    <h1>Ramdom Chart</h1>
     <line-chart :chart-data="datacollection"></line-chart>
     <button @click="fillData()">Randomize</button>
   </div>
@@ -13,7 +12,7 @@
     components: {
       LineChart
     },
-    data () { 
+    data () {
       return {
         datacollection: null
       }
@@ -27,9 +26,9 @@
           labels: [this.getRandomInt(), this.getRandomInt()],
           datasets: [
             {
-              label: 'Data Nueva',
-              backgroundColor: 'blue',
-              data: [40, 35]
+              label: 'Data One',
+              backgroundColor: '#f87979',
+              data: [this.getRandomInt(), this.getRandomInt()]
             }, {
               label: 'Data One',
               backgroundColor: '#f87979',
