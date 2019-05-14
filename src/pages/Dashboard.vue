@@ -4,15 +4,14 @@
       
         <component :is="currentMenu" :right="side === 'right' ? true: false">
             
-              <router-link to="/dashboard/dash">
+            <router-link to="/dashboard/dash">
                 <i class="fa fa-fw fa-star-o"></i>
                 <span>Dashboard</span>
-              </router-link>
-            
-            <a href="#">
-                <i class="fa fa-fw fa-bell-o"></i>
+            </router-link>
+            <router-link to="/dashboard/Alerts">
+                <i class="fa fa-fw fa-newspaper-o"></i>
                 <span>Alerts</span>
-            </a>
+            </router-link>
             <a href="#">
                 <i class="fa fa-fw fa-envelope-o"></i>
                 <span>Messages</span>

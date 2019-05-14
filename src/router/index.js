@@ -5,6 +5,7 @@ import Dashboard from '..//pages/Dashboard'
 import children from '..//components/children'
 import contact from '..//components/contact'
 import dash from '..//components/dash'
+import Alerts from '..//components/Alerts'
 import firebase from "firebase"
 
 //import { mapActions, mapGetters } from "vuex";
@@ -39,7 +40,8 @@ const router = new Router({
 
           { path: '/dashboard/children', component: children  },
           { path: '/dashboard/contact', component: contact },
-          { path: '/dashboard/dash', component: dash }
+          { path: '/dashboard/dash', component: dash },
+          { path: '/dashboard/Alerts', component: Alerts }
 
      ]
       }
